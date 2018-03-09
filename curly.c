@@ -16,7 +16,7 @@ int main (int argc, char *argv[])
                   case 3: if (isdigit(*argv[2])) s=atoi(argv[2]);  
                 };
   printf("Using curl on %s every %d seconds for %d iterations\n",argv[1],s,c);
-  sprintf(curl_command,"curl %s > /dev/null",argv[1]);
+  sprintf(curl_command,"curl -k %s > /dev/null",argv[1]);
   do { sleep(s); system(curl_command); } while (--c); 
   return 0;
 }
